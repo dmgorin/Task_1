@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://icon.svg" type="Texture" id=1]
+[ext_resource path="res://base/Object.gd" type="Script" id=2]
+[ext_resource path="res://base/Controller.gd" type="Script" id=3]
+
+[sub_resource type="CubeMesh" id=1]
+
+[node name="Scene" type="Spatial"]
+
+[node name="Controller" type="Spatial" parent="."]
+script = ExtResource( 3 )
+top_limit = -10.0
+bottom_limit = 10.0
+left_limit = -15.0
+right_limit = 15.0
+
+[node name="Object" type="MeshInstance" parent="Controller"]
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+script = ExtResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 15, 0 )
+current = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( -25, -2.18557e-06, 9.55343e-14, 0, -1.09278e-06, -25, 2.18557e-06, -25, 1.09278e-06, 0, -1, 0 )
+texture = ExtResource( 1 )
