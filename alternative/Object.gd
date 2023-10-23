@@ -9,7 +9,9 @@ export var direction: Vector3 = Vector3.FORWARD setget set_direction, get_direct
 # set/get
 func set_direction(value: Vector3) -> void:
 	direction = value
-	# Установка значения по высоте, так как такое 
+	# По заданию перемещение указано в плоскости, и вперед-назад. Перемещение вперед-назад по
+	# умолчанию ось Z, а второй осью для формирования "плоскости перемещения" я выбрал X.
+	# Соответственно, ось Y не учитывается и обнуляется.
 	direction.y = 0
 
 

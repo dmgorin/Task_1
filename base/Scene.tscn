@@ -10,8 +10,8 @@
 
 [node name="Controller" type="Spatial" parent="."]
 script = ExtResource( 3 )
-top_limit = -10.0
-bottom_limit = 10.0
+forward_limit = -10.0
+backward_limit = 10.0
 left_limit = -15.0
 right_limit = 15.0
 

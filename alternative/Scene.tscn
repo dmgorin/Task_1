@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://extended/Controller.gd" type="Script" id=1]
-[ext_resource path="res://extended/Object.gd" type="Script" id=3]
-[ext_resource path="res://extended/Borders.gd" type="Script" id=4]
-[ext_resource path="res://icon.svg" type="Texture" id=5]
+[ext_resource path="res://alternative/Controller.gd" type="Script" id=1]
+[ext_resource path="res://alternative/Object.gd" type="Script" id=2]
+[ext_resource path="res://alternative/Borders.gd" type="Script" id=3]
+[ext_resource path="res://icon.svg" type="Texture" id=4]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -15,12 +15,12 @@ object_path = NodePath("../Object")
 
 [node name="Object" type="MeshInstance" parent="."]
 mesh = SubResource( 1 )
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
 [node name="Borders" type="Spatial" parent="."]
-script = ExtResource( 4 )
-top_limit = -10.0
-bottom_limit = 10.0
+script = ExtResource( 3 )
+forward_limit = -10.0
+backward_limit = 10.0
 left_limit = -15.0
 right_limit = 15.0
 watched_object_path = NodePath("../Object")
@@ -31,4 +31,4 @@ current = true
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( -25, -2.18557e-06, 9.55343e-14, 0, -1.09278e-06, -25, 2.18557e-06, -25, 1.09278e-06, 0, -1, 0 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )

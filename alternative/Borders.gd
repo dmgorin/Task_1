@@ -2,8 +2,8 @@ extends Spatial
 
 signal object_bumped(object_path)
 
-export var top_limit: float = -1.0
-export var bottom_limit: float = 1.0
+export var forward_limit: float = -1.0
+export var backward_limit: float = 1.0
 export var left_limit: float = -1.0
 export var right_limit: float = 1.0
 var is_reflect: bool = false
@@ -28,7 +28,7 @@ func _process(delta):
 func has_intersection(object: Node) -> bool:
 	if object.translation.x > right_limit or object.translation.x < left_limit:
 		return true
-	elif object.translation.z > bottom_limit or object.translation.z < top_limit:
+	elif object.translation.z > backward_limit or object.translation.z < forward_limit:
 		return true
 	else:
 		return false
